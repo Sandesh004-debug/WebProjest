@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication3.Site" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnEase – Modern Digital Learning Platform</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="Styles/Main.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --brand-primary: #0d6efd;
+            --brand-dark: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-premium {
+            padding: 12px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom py-3">
+            <div class="container">
+                <asp:HyperLink runat="server" NavigateUrl="~/index.aspx" CssClass="navbar-brand d-flex align-items-center">
+                    <asp:Image runat="server" ImageUrl="~/images/logo.png" CssClass="me-2" Height="45" />
+                    <span class="fw-bold fs-3 text-gradient">LearnEase</span>
+                </asp:HyperLink>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="bi bi-list fs-1"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto me-4 gap-2">
+                        <li class="nav-item">
+                            <asp:HyperLink runat="server" NavigateUrl="~/index.aspx" CssClass="nav-link active fw-semibold">Home</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink runat="server" NavigateUrl="~/about.aspx" CssClass="nav-link fw-semibold">About</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink runat="server" NavigateUrl="~/courses.aspx" CssClass="nav-link fw-semibold">Courses</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink runat="server" NavigateUrl="~/ContactUS.aspx" CssClass="nav-link fw-semibold">Contact Us</asp:HyperLink></li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                        <asp:HyperLink runat="server" NavigateUrl="~/Login.aspx" CssClass="btn btn-outline-primary btn-premium">Login</asp:HyperLink>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Register.aspx" CssClass="btn btn-warning btn-premium text-white shadow-sm">Get Started</asp:HyperLink>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+        <footer class="bg-dark text-light pt-5 pb-4 mt-5" style="border-radius: 40px 40px 0 0;">
+            <div class="container pt-3">
+                <div class="row g-5 justify-content-between">
+                    <div class="col-lg-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <asp:Image runat="server" ImageUrl="~/images/logo.png" Height="45" CssClass="me-2" />
+                            <span class="fw-bold fs-3">LearnEase</span>
+                        </div>
+                        <p class="text-white-50 mb-4">Empowering the next generation of digital leaders.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h6 class="fw-bold mb-4">Quick Links</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="index.aspx" class="text-white-50 text-decoration-none d-block mb-3">Home</a></li>
+                            <li><a href="about.aspx" class="text-white-50 text-decoration-none d-block mb-3">About Us</a></li>
+                            <li><a href="courses.aspx" class="text-white-50 text-decoration-none d-block mb-3">Courses</a></li>
+                            <li><a href="ContactUs.aspx" class="text-white-50 text-decoration-none d-block mb-3">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h6 class="fw-bold mb-4">Contact</h6>
+                        <p class="text-white-50 small mb-2"><i class="bi bi-envelope me-2 text-primary"></i>info@learnease.com</p>
+                        <p class="text-white-50 small mb-2"><i class="bi bi-phone me-2 text-primary"></i>+977 9700000000</p>
+                        <p class="text-white-50 small"><i class="bi bi-geo-alt me-2 text-primary"></i>Maitidevi, Kathmandu</p>
+                    </div>
+                </div>
+                <hr class="my-5 border-secondary opacity-25" />
+                <div class="text-center text-white-50 small">
+                    <p class="m-0">&copy; <%= DateTime.Now.Year %> LearnEase Global. Developed by APU Students.</p>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
